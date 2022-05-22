@@ -1,0 +1,81 @@
+<html>
+
+<head>
+    
+    <title>Avatar Maker</title>
+
+    <script>
+
+        window.onload = function ()
+        {
+
+            //HEAD
+            var skullhead = new Image();
+            var skullheadnum=Math.floor(Math.random()*10)+1; // change '10' to whatever number head files you have
+            var skullheadname="skull" + skullheadnum + ".png";
+            skullhead.src=skullheadname;
+
+            //CROWN
+            var skullcrown = new Image();
+            var skullcrownnum=Math.floor(Math.random()*10)+1; // change '10' to whatever number crown files you have
+            var skullcrownname="crown" + skullcrownnum + ".png";
+            skullcrown.src=skullcrownname;
+
+            //CHIN
+            var skullchin = new Image();
+            var skullchinnum=Math.floor(Math.random()*5)+1; // change '5' to whatever number chin files you have
+            var skullchinname="chin" + skullchinnum + ".png";
+            skullchin.src=skullchinname;
+
+            //HEAD LOADED
+            skullhead.onload=function()
+            {
+                buildrobot();
+            }
+
+            //CORWN LOADED
+            skullcrown.onload=function()
+            {
+                buildrobot();
+            }
+
+            //CHIN LOADED
+            skullchin.onload=function()
+            {
+                buildrobot();
+            }
+
+            function buildrobot()
+            {
+                var canvas=document.getElementById('canvas');
+                var ctx = canvas.getContext('2d');
+                canvas.width=400;
+                canvas.height=400;
+
+                //DRAW HEAD
+                ctx.drawImage(skullhead, ((400-skullhead.width)/2),(400-skullhead.height)/2);
+
+                //DRAW CROWN
+                ctx.drawImage(skullcrown, ((400-skullcrown.width)/2),(400-skullcrown.height)/2);
+
+                //DRAW CHIN
+                ctx.drawImage(skullchin, ((400-skullchin.width)/2),(400-skullchin.height)/2);
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <div align="center">
+    
+<canvas id="canvas" style="border:5px solid #000000;"></canvas>
+<br><br>
+<button onClick="window.location.reload();">Generate!</button>
+
+    </div>
+    
+</body>
+
+</html>

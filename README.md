@@ -1,5 +1,2 @@
 # skullgen
-# skullgen
-# skullgen
-# skullgen
-# skullgen
+Open `skullgen.html` with a web browser.
